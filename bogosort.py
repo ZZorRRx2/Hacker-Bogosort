@@ -10,11 +10,13 @@ def bogoSort(a):
 
 # To check if array is sorted or not
 def is_sorted(a):
+    global COUNTER_VAR
     print(a)
     time.sleep(0.25)
     n = len(a)
     for i in range(0, n-1):
         if (a[i] > a[i+1] ):
+            COUNTER_VAR += 1
             return False
     return True
 
@@ -28,7 +30,9 @@ def shuffle(a):
 # Driver code to test above
 #a = [3, 2, 4, 1, 0, 5]
 a = [random.randint(0, 1) for iter in range(2520)]
+COUNTER_VAR = 0
 bogoSort(a)
 print("Sorted array :")
+print("loops made", COUNTER_VAR)
 for i in range(len(a)):
     print ("%d" %a[i]),
